@@ -25,6 +25,8 @@ namespace vstudio_neovim
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(vstudio_neovimPackage.PackageGuidString)]
+    [ProvideEditorExtension(typeof(EditorFactory), ".neovim", 50, NameResourceID = 100)]
+    [ProvideEditorExtension(typeof(EditorFactory), ".*", 2, NameResourceID = 100)]
     public sealed class vstudio_neovimPackage : AsyncPackage
     {
         /// <summary>
@@ -43,6 +45,9 @@ namespace vstudio_neovim
         /// <returns>A task representing the async work of package initialization, or an already completed task if there is none. Do not return null from this method.</returns>
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
+            //Create Editor Factory. Note that the base Package class will call Dispose on it.
+            base.RegisterEditorFactory(new EditorFactory());
+
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
