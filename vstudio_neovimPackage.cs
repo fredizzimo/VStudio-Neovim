@@ -27,6 +27,8 @@ namespace vstudio_neovim
     [Guid(vstudio_neovimPackage.PackageGuidString)]
     [ProvideEditorExtension(typeof(EditorFactory), ".neovim", 50, NameResourceID = 100)]
     [ProvideEditorExtension(typeof(EditorFactory), ".*", 2, NameResourceID = 100)]
+    [ProvideMenuResource("Menus.ctmenu", 1)]
+    [ProvideToolWindow(typeof(MainWindow))]
     public sealed class vstudio_neovimPackage : AsyncPackage
     {
         /// <summary>
@@ -51,6 +53,7 @@ namespace vstudio_neovim
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            await MainWindowCommand.InitializeAsync(this);
         }
 
         #endregion
