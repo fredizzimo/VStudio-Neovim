@@ -9,6 +9,7 @@ using Microsoft.VisualStudio.TextManager.Interop;
 using Microsoft.VisualStudio.Utilities;
 using System;
 using System.Runtime.InteropServices;
+using System.Windows;
 using System.Windows.Controls;
 using vstudio_neovim.Properties;
 
@@ -104,7 +105,8 @@ namespace vstudio_neovim
 
                     IVsCodeWindowEx codeWindowEx = (IVsCodeWindowEx)_codeWindow;
                     INITVIEW[] initView = new INITVIEW[1];
-                    codeWindowEx.Initialize((uint)_codewindowbehaviorflags.CWB_DISABLESPLITTER | (uint)_codewindowbehaviorflags.CWB_DISABLEDROPDOWNBAR | (uint)CWB_DISABLEDIFF,
+                    // We don't want the built in splitter, but keep the other behaviours
+                    codeWindowEx.Initialize((uint)_codewindowbehaviorflags.CWB_DISABLESPLITTER,
                                              VSUSERCONTEXTATTRIBUTEUSAGE.VSUC_Usage_Filter,
                                              szNameAuxUserContext: "",
                                              szValueAuxUserContext: "",
@@ -122,7 +124,12 @@ namespace vstudio_neovim
 
                     //Get our WPF host from our text view (from our code window).
                     IWpfTextViewHost textViewHost = _editorAdaptersFactoryService.GetWpfTextViewHost(textView);
-                    control.Editor.Content = textViewHost.HostControl;
+                    FrameworkElement editorControl = textViewHost.HostControl;
+                    while (editorControl.Parent != null && editorControl.Parent is FrameworkElement)
+                    {
+                        editorControl = (FrameworkElement)editorControl.Parent;
+                    }
+                    control.Editor.Content = editorControl;
                     break;
 
                 default:
