@@ -96,7 +96,6 @@ namespace vstudio_neovim
             {
                 throw new NotSupportedException("Cannot create tool window");
             }
-
             IVsWindowFrame windowFrame = (IVsWindowFrame)window.Frame;
             Microsoft.VisualStudio.ErrorHandler.ThrowOnFailure(windowFrame.Show());
         }

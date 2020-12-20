@@ -1,6 +1,10 @@
 ﻿using Microsoft.VisualStudio.Shell;
 using System;
 using System.Runtime.InteropServices;
+using Microsoft.VisualStudio.Text.Editor;
+using System.ComponentModel.Composition;
+using Microsoft.VisualStudio.Text;
+using System.Collections.Generic;
 
 namespace vstudio_neovim
 {
@@ -18,6 +22,11 @@ namespace vstudio_neovim
     [Guid("9f18e8c3-2dde-4353-ae59-94ca891fceeb")]
     public class MainWindow : ToolWindowPane
     {
+        [Import]
+        internal ITextEditorFactoryService _textEditorService = null;
+
+        private Dictionary<ITextBuffer, IWpfTextView> _trackedBuffers = new Dictionary<ITextBuffer, IWpfTextView>();
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
         /// </summary>
