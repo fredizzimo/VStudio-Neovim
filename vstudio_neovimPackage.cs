@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.Shell;
+﻿using Microsoft.VisualStudio;
+using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using System;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -25,6 +27,8 @@ namespace vstudio_neovim
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(vstudio_neovimPackage.PackageGuidString)]
+    [ProvideEditorFactory(typeof(EditorFactory), 100, CommonPhysicalViewAttributes = (int)__VSPHYSICALVIEWATTRIBUTES.PVA_None, TrustLevel = __VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
+    [ProvideEditorLogicalView(typeof(EditorFactory), VSConstants.LOGVIEWID.TextView_string, IsTrusted = true)]
     [ProvideEditorExtension(typeof(EditorFactory), ".neovim", 50, NameResourceID = 100)]
     [ProvideEditorExtension(typeof(EditorFactory), ".*", 2, NameResourceID = 100)]
     [ProvideMenuResource("Menus.ctmenu", 1)]

@@ -105,7 +105,7 @@ namespace vstudio_neovim
 
                     IVsCodeWindowEx codeWindowEx = (IVsCodeWindowEx)_codeWindow;
                     INITVIEW[] initView = new INITVIEW[1];
-                    // We don't want the built in splitter, but keep the other behaviours
+                    // We don't want the built in splitter, but let's keep the other behaviours
                     codeWindowEx.Initialize((uint)_codewindowbehaviorflags.CWB_DISABLESPLITTER,
                                              VSUSERCONTEXTATTRIBUTEUSAGE.VSUC_Usage_Filter,
                                              szNameAuxUserContext: "",
@@ -139,7 +139,7 @@ namespace vstudio_neovim
 
             ppunkDocData = Marshal.GetIUnknownForObject(textBuffer);
 
-            return VSConstants.E_NOINTERFACE;
+            return VSConstants.S_OK;
         }
 
         public int SetSite(Microsoft.VisualStudio.OLE.Interop.IServiceProvider psp)
@@ -161,6 +161,16 @@ namespace vstudio_neovim
         public int MapLogicalView(ref Guid rguidLogicalView, out string pbstrPhysicalView)
         {
             pbstrPhysicalView = null;
+            pbstrPhysicalView = null;
+
+            if (rguidLogicalView == VSConstants.LOGVIEWID.Primary_guid ||
+                rguidLogicalView == VSConstants.LOGVIEWID.Debugging_guid ||
+                rguidLogicalView == VSConstants.LOGVIEWID.Code_guid ||
+                rguidLogicalView == VSConstants.LOGVIEWID.TextView_guid)
+            {
+                return VSConstants.S_OK;
+            }
+
             return VSConstants.E_NOTIMPL;
         }
     }
