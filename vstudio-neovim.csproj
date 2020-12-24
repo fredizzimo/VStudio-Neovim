@@ -51,6 +51,7 @@
     <Compile Include="MainWindowControl.xaml.cs">
       <DependentUpon>MainWindowControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NeovimDocumentGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Guids.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -58,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="NeovimViewElementFactory.cs" />
     <Compile Include="vstudio_neovimPackage.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +75,18 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.Diagnostics.Assert">
+      <HintPath>..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\PrivateAssemblies\Microsoft.VisualStudio.Diagnostics.Assert.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Platform.WindowManagement">
+      <HintPath>..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Microsoft.VisualStudio.Platform.WindowManagement.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.ViewManager">
+      <HintPath>..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Microsoft.VisualStudio.Shell.ViewManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
