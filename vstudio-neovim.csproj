@@ -60,6 +60,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="NeovimViewElementFactory.cs" />
+    <Compile Include="UI\DocumentWindow.cs" />
     <Compile Include="vstudio_neovimPackage.cs" />
   </ItemGroup>
   <ItemGroup>
