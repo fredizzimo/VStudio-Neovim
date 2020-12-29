@@ -60,9 +60,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="NeovimViewElementFactory.cs" />
-    <Compile Include="UI\NeovimDocumentGroupControl.xaml.cs">
-      <DependentUpon>NeovimDocumentGroupControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="vstudio_neovimPackage.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,10 +121,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindowControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\NeovimDocumentGroupControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
