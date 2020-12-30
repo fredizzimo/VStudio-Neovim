@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace vstudio_neovim
+namespace VStudioNeovim
 {
     /// <summary>
     /// Interaction logic for MainWindowControl.

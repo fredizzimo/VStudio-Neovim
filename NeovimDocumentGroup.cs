@@ -2,9 +2,9 @@
 using System.Collections.Specialized;
 using Microsoft.VisualStudio.Platform.WindowManagement;
 using Microsoft.VisualStudio.PlatformUI.Shell;
-using vstudio_neovim.UI;
+using VStudioNeovim.UI;
 
-namespace vstudio_neovim
+namespace VStudioNeovim
 {
     class NeovimDocumentGroup : WMDocumentGroup
     {

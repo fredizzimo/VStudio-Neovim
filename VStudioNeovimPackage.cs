@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.PlatformUI.Shell;
 using System.Windows;
 using System.Reflection;
 
-namespace vstudio_neovim
+namespace VStudioNeovim
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -29,10 +29,10 @@ namespace vstudio_neovim
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [Guid(vstudio_neovimPackage.PackageGuidString)]
+    [Guid(VStudioNeovimPackage.PackageGuidString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [ProvideToolWindow(typeof(MainWindow))]
-    public sealed class vstudio_neovimPackage : AsyncPackage
+    public sealed class VStudioNeovimPackage : AsyncPackage
     {
         /// <summary>
         /// vstudio_neovimPackage GUID string.

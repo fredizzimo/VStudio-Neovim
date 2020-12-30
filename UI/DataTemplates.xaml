@@ -4,8 +4,8 @@
                     xmlns:ui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
                     xmlns:vs="clr-namespace:Microsoft.VisualStudio.PlatformUI.Shell.Controls;assembly=Microsoft.VisualStudio.Shell.ViewManager"
                     xmlns:vsimpl="clr-namespace:Microsoft.VisualStudio.PlatformUI.Shell;assembly=Microsoft.VisualStudio.Shell.ViewManager"
-                    xmlns:nv="clr-namespace:vstudio_neovim"
-                    xmlns:nvui="clr-namespace:vstudio_neovim.UI">
+                    xmlns:nv="clr-namespace:VStudioNeovim"
+                    xmlns:nvui="clr-namespace:VStudioNeovim.UI">
     <DataTemplate DataType="{x:Type nv:NeovimDocumentGroup}">
         <ui:LayoutSynchronizedItemsControl ItemsSource="{Binding Windows}">
             <ItemsControl.ItemsPanel>

@@ -4,7 +4,7 @@ using System.Windows;
 using Microsoft.VisualStudio.PlatformUI.Shell;
 
 
-namespace vstudio_neovim
+namespace VStudioNeovim
 {
     class NeovimViewElementFactory : ViewElementFactory
     {

@@ -6,7 +6,7 @@ using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.Text;
 using System.Collections.Generic;
 
-namespace vstudio_neovim
+namespace VStudioNeovim
 {
     /// <summary>
     /// This class implements the tool window exposed by this package and hosts a user control.

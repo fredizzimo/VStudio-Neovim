@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vstudio_neovim.UI
+namespace VStudioNeovim.UI
 {
     class DocumentWindow
     {

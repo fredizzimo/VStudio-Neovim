@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vstudio_neovim.Properties
+namespace VStudioNeovim.Properties
 {
     static class GuidList
     {

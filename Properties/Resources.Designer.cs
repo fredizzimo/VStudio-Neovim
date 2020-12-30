@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace vstudio_neovim.Properties {
+namespace VStudioNeovim.Properties {
     using System;
     
     

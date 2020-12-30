@@ -60,7 +60,7 @@
     </Compile>
     <Compile Include="NeovimViewElementFactory.cs" />
     <Compile Include="UI\DocumentWindow.cs" />
-    <Compile Include="vstudio_neovimPackage.cs" />
+    <Compile Include="VStudioNeovimPackage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt">
@@ -108,7 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\NeovimIcon.png" />
-    <VSCTCompile Include="vstudio_neovimPackage.vsct">
+    <VSCTCompile Include="VStudioNeovim.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>
   </ItemGroup>
