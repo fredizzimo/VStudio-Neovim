@@ -30,10 +30,6 @@ namespace vstudio_neovim
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(vstudio_neovimPackage.PackageGuidString)]
-    [ProvideEditorFactory(typeof(EditorFactory), 100, CommonPhysicalViewAttributes = (int)__VSPHYSICALVIEWATTRIBUTES.PVA_None, TrustLevel = __VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
-    [ProvideEditorLogicalView(typeof(EditorFactory), VSConstants.LOGVIEWID.TextView_string, IsTrusted = true)]
-    [ProvideEditorExtension(typeof(EditorFactory), ".neovim", 50, NameResourceID = 100)]
-    [ProvideEditorExtension(typeof(EditorFactory), ".*", 2, NameResourceID = 100)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [ProvideToolWindow(typeof(MainWindow))]
     public sealed class vstudio_neovimPackage : AsyncPackage
@@ -55,8 +51,6 @@ namespace vstudio_neovim
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
             MergeResources();
-            //Create Editor Factory. Note that the base Package class will call Dispose on it.
-            base.RegisterEditorFactory(new EditorFactory(this));
             ViewElementFactory.Current = new NeovimViewElementFactory(ViewElementFactory.Current);
 
         // When initialized asynchronously, the current thread may be a background thread at this point.
