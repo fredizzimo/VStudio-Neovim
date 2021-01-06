@@ -58,6 +58,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TextViewCreationListener.cs" />
     <Compile Include="VStudioNeovimPackage.cs" />
   </ItemGroup>
   <ItemGroup>
