@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.Threading;
+using Task = System.Threading.Tasks.Task;
+using System.Threading;
 
 namespace VStudioNeovim
 {
@@ -14,12 +16,25 @@ namespace VStudioNeovim
     {
         public NeovimClient()
         {
-            ThreadHelper.ThrowIfNotOnUIThread();
             Run();
+        }
+
+        public async Task<T> CallApiAsync<T>(Func<NvimAPI, Task<T>> func)
+        {
+            await _lock.WaitAsync();
+            try
+            {
+                return await func(_api);
+            }
+            finally
+            {
+                _lock.Release();
+            }
         }
 
         private void Run()
         {
+            _lock.Wait();
             ThreadHelper.JoinableTaskFactory.RunAsync(async delegate
             {
                 try
@@ -42,23 +57,20 @@ namespace VStudioNeovim
                         ThreadHelper.JoinableTaskFactory.RunAsync(async delegate
                         {
                             await Microsoft.VisualStudio.Shell.ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-                            _outputPane.OutputString(args.Title);
                         });
                     };
                     await api.UiAttach(100, 100, options);
                     await api.Command($"set titlestring=hello | set title");
-                    while (true)
-                    {
-                        await System.Threading.Tasks.Task.Delay(1000);
-                    }
+                    _api = api;
                 }
-                catch (Exception e)
+                finally
                 {
-
+                    _lock.Release();
                 }
             });
         }
 
-        IVsOutputWindowPane _outputPane;
+        private NvimAPI _api;
+        private SemaphoreSlim _lock = new SemaphoreSlim(1);
     }
 }

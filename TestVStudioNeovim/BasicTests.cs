@@ -1,7 +1,9 @@
 using Microsoft.VisualStudio.Shell;
 using NUnit.Framework;
 using VStudioNeovim;
-using System.Threading.Tasks;
+using Task = System.Threading.Tasks.Task;
+using FluentAssertions;
+
 
 namespace TestVStudioNeovim
 {
@@ -14,10 +16,15 @@ namespace TestVStudioNeovim
         }
 
         [Test]
-        public async System.Threading.Tasks.Task the_neovim_client_connects()
+        public async Task the_neovim_client_connects()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
             var client = new NeovimClient();
+            int result = await client.CallApiAsync(async api =>
+            {
+                return await api.Eval("2 + 2");
+            });
+            result.Should().Be(4);
         }
 
         [Test]
