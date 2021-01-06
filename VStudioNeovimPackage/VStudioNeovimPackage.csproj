@@ -115,6 +115,10 @@
       <Project>{1d23eb28-9122-475f-8044-cac9d1c8d652}</Project>
       <Name>NvimClient</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VStudioNeovim\VStudioNeovim.csproj">
+      <Project>{c4d66a01-3fe4-489f-81d3-effd22e996dd}</Project>
+      <Name>VStudioNeovim</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
