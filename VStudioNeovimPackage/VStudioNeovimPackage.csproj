@@ -62,11 +62,6 @@
     <Compile Include="Package.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LICENSE.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <None Include="Readme.md" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
@@ -90,6 +85,10 @@
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.8.3038" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LICENSE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Resources\NeovimIcon.png" />
     <VSCTCompile Include="VStudioNeovim.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
@@ -108,11 +107,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="nvim.net\src\NvimClient.API\NvimClient.API.csproj">
+    <ProjectReference Include="..\nvim.net\src\NvimClient.API\NvimClient.API.csproj">
       <Project>{4e1508e6-4efc-49a2-85a9-b2a39415918a}</Project>
       <Name>NvimClient.API</Name>
     </ProjectReference>
-    <ProjectReference Include="nvim.net\src\NvimClient\NvimClient.csproj">
+    <ProjectReference Include="..\nvim.net\src\NvimClient\NvimClient.csproj">
       <Project>{1d23eb28-9122-475f-8044-cac9d1c8d652}</Project>
       <Name>NvimClient</Name>
     </ProjectReference>
