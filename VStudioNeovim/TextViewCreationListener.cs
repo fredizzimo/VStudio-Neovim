@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VStudioNeovimPackage
+namespace VStudioNeovim
 {
     [Export(typeof(IWpfTextViewCreationListener))]
     [ContentType("text")]

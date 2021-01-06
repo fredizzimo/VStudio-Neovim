@@ -1,7 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\nvim.net\src\NvimClient.API\NvimClient.API.csproj" />
+    <ProjectReference Include="..\nvim.net\src\NvimClient\NvimClient.csproj" />
+  </ItemGroup>
 
 </Project>
