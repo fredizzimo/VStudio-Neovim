@@ -8,7 +8,7 @@ using Task = System.Threading.Tasks.Task;
 using System.Windows;
 using System.Reflection;
 
-namespace VStudioNeovim
+namespace VStudioNeovimPackage
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -28,10 +28,10 @@ namespace VStudioNeovim
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [Guid(VStudioNeovimPackage.PackageGuidString)]
+    [Guid(Package.PackageGuidString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [ProvideToolWindow(typeof(MainWindow))]
-    public sealed class VStudioNeovimPackage : AsyncPackage
+    public sealed class Package : AsyncPackage
     {
         /// <summary>
         /// vstudio_neovimPackage GUID string.

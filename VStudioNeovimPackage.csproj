@@ -13,7 +13,7 @@
     <ProjectGuid>{0C6D8EA3-F815-48D4-A801-DDE4175EC045}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VStudioNeovim</RootNamespace>
+    <RootNamespace>VStudioNeovimPackage</RootNamespace>
     <AssemblyName>vstudio-neovim</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
@@ -59,7 +59,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="TextViewCreationListener.cs" />
-    <Compile Include="VStudioNeovimPackage.cs" />
+    <Compile Include="Package.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt">

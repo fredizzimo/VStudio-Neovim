@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.Threading;
 
-namespace VStudioNeovim
+namespace VStudioNeovimPackage
 {
     public class NeovimClient
     {
@@ -16,7 +16,7 @@ namespace VStudioNeovim
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            IVsOutputWindow outWindow = Package.GetGlobalService(typeof(SVsOutputWindow)) as IVsOutputWindow;
+            IVsOutputWindow outWindow = Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(SVsOutputWindow)) as IVsOutputWindow;
             Guid outputPaneGuid = new Guid("9605E530-5C8C-4D5B-B150-CC63F10D5DF9");
             string outputPaneTitle = "Neovim";
             outWindow.CreatePane(ref outputPaneGuid, outputPaneTitle, 1, 1);
