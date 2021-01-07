@@ -12,7 +12,14 @@ using System.Threading;
 
 namespace VStudioNeovim
 {
-    public class NeovimClient
+    public interface INeovimClient
+    {
+        Task<T> CallApiAsync<T>(Func<NvimAPI, Task<T>> func);
+        Task<bool> ActivatePrimaryDocumentWindowAsync(string path);
+
+    }
+
+    public class NeovimClient : INeovimClient
     {
         public NeovimClient()
         {
@@ -30,6 +37,11 @@ namespace VStudioNeovim
             {
                 _lock.Release();
             }
+        }
+
+        public Task<bool> ActivatePrimaryDocumentWindowAsync(string path)
+        {
+            return Task.FromResult(true);
         }
 
         private void Run()

@@ -14,8 +14,16 @@ namespace VStudioNeovim
     [TextViewRole(PredefinedTextViewRoles.Editable)]
     public class TextViewCreationListener : IWpfTextViewCreationListener
     {
+        public TextViewCreationListener(INeovimClient client)
+        {
+            _client = client;
+        }
+
         public void TextViewCreated(IWpfTextView textView)
         {
+            new TextView(_client, textView);
         }
+
+        readonly INeovimClient _client;
     }
 }

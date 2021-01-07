@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.Sdk.TestFramework;
 namespace TestVStudioNeovim
 {
     [SetUpFixture]
-    public class Config
+    public class GlobalSetup
     {
         internal static GlobalServiceProvider MockServiceProvider { get; private set; }
 
