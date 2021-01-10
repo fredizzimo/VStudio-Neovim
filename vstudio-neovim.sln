@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VStudioNeovim", "VStudioNeo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestVStudioNeovim", "TestVStudioNeovim\TestVStudioNeovim.csproj", "{4D95CE6B-4984-4F3B-8BC6-B639FF874C2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridDocumentWell", "GridDocumentWell\GridDocumentWell.csproj", "{DB61A37C-DAEE-4926-BF83-4CF01EECDE6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{4D95CE6B-4984-4F3B-8BC6-B639FF874C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D95CE6B-4984-4F3B-8BC6-B639FF874C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D95CE6B-4984-4F3B-8BC6-B639FF874C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB61A37C-DAEE-4926-BF83-4CF01EECDE6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB61A37C-DAEE-4926-BF83-4CF01EECDE6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB61A37C-DAEE-4926-BF83-4CF01EECDE6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB61A37C-DAEE-4926-BF83-4CF01EECDE6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,3 +1,6 @@
 [submodule "nvim.net"]
 	path = nvim.net
 	url = https://github.com/fredizzimo/nvim.net
+[submodule "GridDocumentWell"]
+	path = GridDocumentWell
+	url = https://github.com/fredizzimo/GridDocumentWell
